@@ -11,6 +11,8 @@
 # production
 /build
 
+/src/CONSTANT_API.js
+
 # misc
 .DS_Store
 .env.local
