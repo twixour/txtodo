@@ -12,6 +12,7 @@
 /build
 
 /src/CONSTANT_API.js
+/src/uk.js
 
 # misc
 .DS_Store

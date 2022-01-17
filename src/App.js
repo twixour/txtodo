@@ -29,21 +29,42 @@ const App = () => {
     setInput("");
   };
   return (
-    <div className="App">
-      <h1>TODO React Firebase</h1>
-      <form>
-        <input value={input} onChange={(e) => setInput(e.target.value)} />
-        <button type="submit" onClick={addTodo}>
-          Add Todo
-        </button>
-      </form>
-      <ul>
-        {todos.map((it) => (
-          <li>
-            <Todo key={it.id} arr={it} />
-          </li>
-        ))}
-      </ul>
+    <div className="">
+      <div className="grid grid-cols-5">
+        <div className="col-span-1"></div>
+        <div className="col-span-3 rounded bg-green-900 mt-3 py-1">
+          <h1 className="text-center text-white text-3xl font-extrabold font-mono">
+            TX Todo
+          </h1>
+        </div>
+        <div className="col-span-1"></div>
+      </div>
+      <div className="mt-5 container mx-auto max-w-md font-mono">
+        <form>
+          <input
+            className="border-2 rounded py-1 bg-green-50 border-green-100"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+          />
+          <button
+            className="px-3 mx-3  bg-green-800 rounded py-2 text-white text-center hover:bg-green-900 text-semibold"
+            type="submit"
+            onClick={addTodo}
+          >
+            Add
+          </button>
+        </form>
+        <h2 className="text-center text-2xl mt-3 font-semibold">
+          Already in the list
+        </h2>
+        <ul className="list-reset text-white p-0">
+          {todos.map((it) => (
+            <li className="bg-green-900 border-white border-dashed border-2 my-2 py-4 flex items-center">
+              <Todo key={it.id} arr={it} />
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
